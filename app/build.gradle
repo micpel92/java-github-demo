@@ -44,6 +44,21 @@ tasks.named('test') {
 }
 
 publishing {
+
+    publications {
+        maven(MavenPublication) {
+            groupId = 'eu.micpel'
+            artifactId = 'jagbdo'
+            version = "0.1-SNAPSHOT"
+            from components.java
+
+            pom {
+                name = 'Java Github Demo'
+                description = 'A description of my demo'
+            }
+        }
+    }
+
     repositories {
         maven {
             name = "GitHubPackages"
